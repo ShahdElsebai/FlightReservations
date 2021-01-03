@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: WindowsFormsApplication2, Configuration: Debug Any CPU ------
+1>  WindowsFormsApplication2 -> C:\Users\Zizo\Documents\Visual Studio 2013\Projects\project_is\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

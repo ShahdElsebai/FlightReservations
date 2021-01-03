@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="Display_flight" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="input_Departure" Type="nvarchar" Mode="In" />
+          <Parameter Name="input_distnation" Type="nvarchar" Mode="In" />
+          <Parameter Name="DepartureTime" Type="datetime" Mode="In" />
+          <Parameter Name="num_seats" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Airline_logo_path" Type="nvarchar" MaxLength="50" />
+                <Property Name="Departure" Type="nvarchar" MaxLength="50" />
+                <Property Name="Distnation" Type="nvarchar" MaxLength="50" />
+                <Property Name="Price" Type="float" />
+                <Property Name="Arrival_Time" Type="datetime" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Displayflightn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="input_Departure" Type="nvarchar" Mode="In" />
+          <Parameter Name="input_distnation" Type="nvarchar" Mode="In" />
+          <Parameter Name="DepartureTime" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Airline_logo_path" Type="nvarchar" MaxLength="50" />
+                <Property Name="Departure" Type="nvarchar" MaxLength="50" />
+                <Property Name="Distnation" Type="nvarchar" MaxLength="50" />
+                <Property Name="Price" Type="float" />
+                <Property Name="Arrival_Time" Type="datetime" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="projectModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="Display_flight_Result">
+          <Property Name="Airline_logo_path" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Departure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Distnation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Arrival_Time" Type="DateTime" />
+        </ComplexType>
+        <ComplexType Name="Displayflightn_Result">
+          <Property Name="Airline_logo_path" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Departure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Distnation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Arrival_Time" Type="DateTime" />
+        </ComplexType>
+        <EntityContainer Name="projectEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="Display_flight" IsComposable="true" ReturnType="Collection(projectModel.Display_flight_Result)">
+            <Parameter Name="input_Departure" Mode="In" Type="String" />
+            <Parameter Name="input_distnation" Mode="In" Type="String" />
+            <Parameter Name="DepartureTime" Mode="In" Type="DateTime" />
+            <Parameter Name="num_seats" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Displayflightn" IsComposable="true" ReturnType="Collection(projectModel.Displayflightn_Result)">
+            <Parameter Name="input_Departure" Mode="In" Type="String" />
+            <Parameter Name="input_distnation" Mode="In" Type="String" />
+            <Parameter Name="DepartureTime" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities">
+          <FunctionImportMapping FunctionName="projectModel.Store.Display_flight" FunctionImportName="Display_flight">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="projectModel.Display_flight_Result">
+                <ScalarProperty Name="Airline_logo_path" ColumnName="Airline_logo_path" />
+                <ScalarProperty Name="Departure" ColumnName="Departure" />
+                <ScalarProperty Name="Distnation" ColumnName="Distnation" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="projectModel.Store.Displayflightn" FunctionImportName="Displayflightn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="projectModel.Displayflightn_Result">
+                <ScalarProperty Name="Airline_logo_path" ColumnName="Airline_logo_path" />
+                <ScalarProperty Name="Departure" ColumnName="Departure" />
+                <ScalarProperty Name="Distnation" ColumnName="Distnation" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

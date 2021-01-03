@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities">
+    <FunctionImportMapping FunctionName="projectModel.Store.Display_flight" FunctionImportName="Display_flight">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="projectModel.Display_flight_Result">
+          <ScalarProperty Name="Airline_logo_path" ColumnName="Airline_logo_path" />
+          <ScalarProperty Name="Departure" ColumnName="Departure" />
+          <ScalarProperty Name="Distnation" ColumnName="Distnation" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="projectModel.Store.Displayflightn" FunctionImportName="Displayflightn">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="projectModel.Displayflightn_Result">
+          <ScalarProperty Name="Airline_logo_path" ColumnName="Airline_logo_path" />
+          <ScalarProperty Name="Departure" ColumnName="Departure" />
+          <ScalarProperty Name="Distnation" ColumnName="Distnation" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
